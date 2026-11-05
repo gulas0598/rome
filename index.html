@@ -156,16 +156,16 @@ footer{margin-top:40px;color:var(--muted);font-size:.85rem}
 
 <script>
 const MAP1="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Basilica+of+San+Clemente,+Piazza+di+S.+Clemente,+00184+Roma+RM,+Italy/Colosseo,+P.za+del+Colosseo,+00184+Roma+RM,+Italy/Colosseum,+P.za+del+Colosseo,+1,+00184+Roma+RM,+Italy/Circus+Maximus,+00186+Roma+RM,+Italy/Roman+Forum,+00186+Roma+RM,+Italy/Trajan's+Column,+Via+dei+Fori+Imperiali,+00187+Roma+RM,+Italy/Piazza+del+Campidoglio,+00186+Roma+RM,+Italy/Trattoria+Della+Stampa,+Via+dei+Maroniti,+32,+00187+Roma+RM,+Italy/@41.8914962,12.4779169,15.46z/data=!4m56!4m55!1m5!1m1!1s0x132f610712a8de03:0x43688a6bbe0a210b!2m2!1d12.491789!2d41.908261!1m5!1m1!1s0x132f61b84d7e5de9:0x97e138e66d21b151!2m2!1d12.4975757!2d41.8893347!1m5!1m1!1s0x132f61b6c247d27b:0xc2f067c8ffffc983!2m2!1d12.4914684!2d41.8914771!1m5!1m1!1s0x132f61b6532013ad:0x28f1c82e908503c4!2m2!1d12.4922309!2d41.8902102!1m5!1m1!1s0x132f61cadc47c5c5:0x68110dfa2da8d96c!2m2!1d12.4857578!2d41.8858762!1m5!1m1!1s0x132f61b383a9cdef:0xfa914007c0ec7de6!2m2!1d12.4864378!2d41.8920906!1m5!1m1!1s0x132f61b2d423ee1f:0x9dc836ce4ae28be8!2m2!1d12.484299!2d41.895833!1m5!1m1!1s0x132f604ca0596a49:0xb52d0fa1b6a3435!2m2!1d12.4827909!2d41.8931725!1m5!1m1!1s0x132f61acbac49415:0x1535976629c446ad!2m2!1d12.4847673!2d41.9022142!3e2?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D";
-const MAP2="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Gardens+of+Palazzo+Venezia,+Piazza+di+S.+Marco,+49,+00186+Roma+RM,+Italy/Largo+di+Torre+Argentina,+00186+Roma+RM,+Italy/Piazza+Navona,+00186+Roma+RM,+Italy/Osteria+da+Fortunata+-+Rinascimento,+Corso+del+Rinascimento,+17,+00186+Roma+RM,+Italy/Trevi+Fountain,+Piazza+di+Trevi,+00187+Roma+RM,+Italy/La+Colonna+di+Marco+Aurelio,+V.+del+Corso,+00187+Roma+RM,+Italy/Spanish+Steps,+Piazza+di+Spagna,+00187+Roma+RM,+Italy/Mausoleum+of+Augustus,+Piazza+Augusto+Imperatore,+00186+Roma+RM,+Italy/Piazza+del+Popolo,+Roma+RM,+Italy/La+Buca+di+Ripetta,+Via+di+Ripetta,+36,+00186+Roma+RM,+Italy/@41.9034875,12.472344,15z/data=!3m1!4b1!4m68!4m67!1m5!1m1!1s0x132f610712a8de03:0x43688a6bbe0a210b!2m2!1d12.491789!2d41.908261!1m5!1m1!1s0x132f61b232a376ad:0x3888a67f597c4bf0!2m2!1d12.4815269!2d41.8959277!1m5!1m1!1s0x132f604ef369ad3f:0x77f590947214104d!2m2!1d12.4768916!2d41.8960403!1m5!1m1!1s0x132f604ffb562893:0x5c425ce8ce05efb!2m2!1d12.4732921!2d41.8991328!1m5!1m1!1s0x132f614c69ed10df:0xc987d563139a8649!2m2!1d12.4739066!2d41.8976934!1m5!1m1!1s0x132f6053278340d5:0xf676f1e1cc02bbb6!2m2!1d12.483313!2d41.9009325!1m5!1m1!1s0x132f610060342b49:0xa52af45836c9b1d1!2m2!1d12.4799857!2d41.9008869!1m5!1m1!1s0x132f60541678ae75:0x7fc0d4978aae690f!2m2!1d12.482775!2d41.90599!1m5!1m1!1s0x132f6056f1882ae5:0x4916bb1e62c0e72c!2m2!1d12.4764264!2d41.9060311!1m5!1m1!1s0x132f60f8e5fa32d1:0xc87b8749f3592a6a!2m2!1d12.4762093!2d41.9110163!1m5!1m1!1s0x132f6056259de5dd:0xcc64d34962e43ab4!2m2!1d12.4761763!2d41.9083504!3e2?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D";
-const MAP3="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Villa+Medici,+Viale+della+Trinit%C3%A0+dei+Monti,+1,+00187+Roma+RM,+Italy/Vatican+Museums,+00120+Citt%C3%A0+del+Vaticano,+Vatican+City/Saint+Peter's+Square,+Piazza+San+Pietro,+00120+Citt%C3%A0+del+Vaticano,+Vatican+City/@41.9064285,12.4692251,15.87z/data=!4m26!4m25!1m5!1m1!1s0x132f610712a8de03:0x43688a6bbe0a210b!2m2!1d12.491789!2d41.908261!1m5!1m1!1s0x132f60552d72ab5b:0x1baeac81c2a6c031!2m2!1d12.482623!2d41.9082914!1m5!1m1!1s0x132f6063839bc129:0xcfe0eca0526416b6!2m2!1d12.4536413!2d41.9064878!1m5!1m1!1s0x132f608ac6fc195d:0xefc0d618affc9ec5!2m2!1d12.4568158!2d41.9022359!3e2?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D";
+const MAP2="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Vatican+Museums,+Vatican+City/Saint+Peter's+Square,+Vatican+City/Osteria+da+Fortunata+-+Rinascimento,+Corso+del+Rinascimento,+17,+00186+Roma+RM,+Italy/Pantheon,+Roma+RM,+Italy/Trevi+Fountain,+Piazza+di+Trevi,+00187+Roma+RM,+Italy/La+Colonna+di+Marco+Aurelio,+V.+del+Corso,+00187+Roma+RM,+Italy/Spanish+Steps,+Piazza+di+Spagna,+00187+Roma+RM,+Italy/Mausoleum+of+Augustus,+Piazza+Augusto+Imperatore,+00186+Roma+RM,+Italy/Piazza+del+Popolo,+Roma+RM,+Italy/La+Buca+di+Ripetta,+Via+di+Ripetta,+36,+00186+Roma+RM,+Italy/data=!4m2!4m1!3e2";
+const MAP3="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Villa+Medici,+Viale+della+Trinit%C3%A0+dei+Monti,+1,+00187+Roma+RM,+Italy/Gardens+of+Palazzo+Venezia,+Piazza+di+S.+Marco,+49,+00186+Roma+RM,+Italy/Giolitti,+Via+degli+Uffici+del+Vicario,+40,+00186+Roma+RM,+Italy/Largo+di+Torre+Argentina,+00186+Roma+RM,+Italy/Piazza+Navona,+00186+Roma+RM,+Italy/data=!4m2!4m1!3e2";
 
 const DAYS=[
  {title:"Day 1: Ancient Rome",map:MAP1,
   note:"Friday. Starting point is the Airbnb.",
   stops:[
    {t:"10:00",n:"Basilica of San Clemente",tags:[["Entry ticket","buy"]]},
-   {t:"11:00",n:"Colosseum"},
-   {t:"11:30",n:"Colosseum station (entry)",tags:[["Entry ticket","buy"]]},
+   {t:"11:00",n:"Colosseum (from outside)"},
+   {t:"11:30",n:"Colosseo station: museum of finds from the Colosseum excavations",tags:[["Entry","buy"]]},
    {t:"13:00",n:"Lunch (to be decided)",food:1},
    {t:"14:30",n:"Roman Forum",tags:[["Entry ticket","buy"]]},
    {t:"16:00",n:"Circus Maximus"},
@@ -175,12 +175,11 @@ const DAYS=[
    {t:"18:30",n:"Trajan's Column"},
    {t:"20:00",n:"Dinner: Trattoria della Stampa",food:1}
   ]},
- {title:"Day 2: Historic centre",map:MAP2,
+ {title:"Day 2: Vatican and historic centre",map:MAP2,
   note:"Saturday. Starting point is the Airbnb.",
   stops:[
-   {t:"10:00",n:"Gardens of Palazzo Venezia",tags:[["Free entry",""]]},
-   {t:"10:45",n:"Largo di Torre Argentina"},
-   {t:"11:30",n:"Piazza Navona"},
+   {t:"09:30",n:"Vatican Museums",tags:[["Entry ticket","buy"]]},
+   {t:"11:30",n:"St Peter's Square"},
    {t:"12:30",n:"Lunch: Osteria da Fortunata",food:1},
    {t:"14:00",n:"Pantheon"},
    {t:"15:00",n:"Trevi Fountain and Column of Marcus Aurelius"},
@@ -190,28 +189,30 @@ const DAYS=[
    {t:"18:30",n:"Piazza del Popolo"},
    {t:"20:00",n:"Dinner: La Buca di Ripetta",food:1}
   ]},
- {title:"Day 3: Villa Medici and the Vatican",map:MAP3,
-  note:"Sunday. Starting point is the Airbnb.",
+ {title:"Day 3: Villa Medici and old Rome",map:MAP3,
+  note:"Sunday. Starting point is the Airbnb. Flight home at 19:35.",
   stops:[
-   {t:"11:00",n:"Villa Medici"},
-   {t:"12:30",n:"Lunch and gelato 2: Giolitti",food:1},
-   {t:"14:00",n:"Vatican Museums",tags:[["Entry ticket","buy"]]},
-   {t:"16:00",n:"St Peter's Square"}
+   {t:"10:00",n:"Villa Medici"},
+   {t:"11:30",n:"Gardens of Palazzo Venezia",tags:[["Free entry",""]]},
+   {t:"12:30",n:"Lunch (to be decided)",food:1},
+   {t:"After",n:"Gelato 2: Giolitti",food:1},
+   {t:"14:00",n:"Largo di Torre Argentina"},
+   {t:"14:30",n:"Piazza Navona"}
   ]}
 ];
 
 const SUGG=[
- ["Palatine Hill","Included in the Colosseum and Forum ticket, between the two. Good views over the Circus Maximus."],
+ ["Palatine Hill","Right next to the Roman Forum and normally covered by the same ticket. Good views over the Circus Maximus."],
  ["Pincio terrace at sunset","Right by the Airbnb, above Piazza del Popolo. Sunset is around 16:55."],
  ["Dinner in Trastevere","Narrow streets across the Tiber. A good option for a free evening."],
  ["Castel Sant'Angelo","On the way between the centre and the Vatican."],
  ["Aventine keyhole and Orange Garden","Free, near the Circus Maximus. The keyhole frames the dome of St Peter's."],
  ["Galleria Borghese","Right next to the Airbnb. Entry by reservation only."],
- ["Lunch on Day 1 and Day 3","Pick two places."]
+ ["Two lunch spots","Day 1 and Day 3 lunches are still to be decided."]
 ];
 const BOOK=[
- ["Colosseum, Forum and Palatine","One combined timed ticket."],
- ["Vatican Museums","Choose day and time slot."],
+ ["Roman Forum and Palatine","The standard ticket also covers the Colosseum interior. Check the options, since the plan stays outside the Colosseum."],
+ ["Vatican Museums","Day 2, Saturday 7 Nov, 09:30 slot."],
  ["Pantheon","Online ticket."],
  ["Villa Medici","Check visit times."],
  ["Airport transfer at 00:30","Fixed-fare taxi or private transfer. Agree arrival with the host."]
