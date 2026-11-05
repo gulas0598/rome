@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rome, 6 to 8 November</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#E9ECE6;
+  --paper:#F7F8F4;
+  --ink:#16222B;
+  --muted:#5B6770;
+  --tiber:#1E5B57;
+  --tiber-soft:#D5E4E1;
+  --amber:#8A5A0E;
+  --amber-bg:#F6E7C8;
+  --line:#C9CFC6;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --stone:#10181E;
+    --paper:#18232B;
+    --ink:#E8ECE7;
+    --muted:#9AA7AF;
+    --tiber:#6FBDB5;
+    --tiber-soft:#1F3A39;
+    --amber:#E9B867;
+    --amber-bg:#3A2D14;
+    --line:#2E3C46;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.5}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;line-height:1.1}
+a{color:var(--tiber)}
+:focus-visible{outline:3px solid var(--tiber);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
+
+header{padding:44px 0 24px}
+header h1{font-size:clamp(3.2rem,15vw,6.4rem);font-weight:800;letter-spacing:-.04em}
+header p{margin:10px 0 0;color:var(--muted);max-width:46ch}
+#countdown{display:inline-block;margin-top:16px;padding:6px 12px;background:var(--tiber);color:var(--paper);border-radius:4px;font-weight:600;font-size:.95rem}
+
+.flights{display:grid;gap:10px;grid-template-columns:1fr;margin:8px 0 22px}
+@media(min-width:620px){.flights{grid-template-columns:1fr 1fr}}
+.flight{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.flight .route{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.25rem}
+.flight .when{color:var(--muted);font-size:.95rem}
+.flight .ftime{font-weight:600;margin-top:4px}
+
+.stay{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin-bottom:30px}
+.stay b{font-family:"Bricolage Grotesque",sans-serif}
+.meta{color:var(--muted);font-size:.93rem}
+
+.tabs{display:flex;gap:6px;position:sticky;top:0;background:var(--stone);padding:10px 0;z-index:5;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;font:inherit;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1rem;padding:10px 6px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer}
+.tabs button small{display:block;font-family:"Source Sans 3",sans-serif;font-weight:400;color:var(--muted);font-size:.8rem}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tabs button[aria-selected="true"] small{color:var(--paper);opacity:.75}
+
+.dayhead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:26px 0 8px;flex-wrap:wrap}
+.dayhead h2{font-size:2rem}
+.mapbtn{display:inline-block;padding:8px 14px;background:var(--tiber);color:var(--paper);text-decoration:none;border-radius:4px;font-weight:600;font-size:.95rem}
+.daynote{color:var(--muted);margin:0 0 14px;font-size:.97rem}
+
+ol.timeline{list-style:none;margin:0;padding:0;position:relative}
+ol.timeline::before{content:"";position:absolute;left:62px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.stop{display:grid;grid-template-columns:52px 1fr;column-gap:22px;padding:9px 0;position:relative}
+.stop::before{content:"";position:absolute;left:57px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--tiber)}
+.stop.food::before{background:var(--tiber)}
+.time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--muted);padding-top:6px;font-size:.97rem}
+.card{margin-left:14px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 14px}
+.name{font-weight:600;font-size:1.05rem}
+.tag{display:inline-block;font-size:.8rem;padding:1px 8px;border-radius:99px;background:var(--tiber-soft);color:var(--tiber);margin:4px 4px 0 0;font-weight:600}
+.tag.buy{background:var(--amber-bg);color:var(--amber)}
+
+section.block{margin-top:44px}
+section.block h2{font-size:1.6rem;margin-bottom:6px}
+section.block>p{color:var(--muted);margin:0 0 14px;font-size:.97rem}
+.check{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;background:var(--paper);border:1px solid var(--line);border-radius:6px;margin-bottom:8px;cursor:pointer}
+.check input{margin-top:5px;width:20px;height:20px;accent-color:var(--tiber);flex:none}
+.check b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:600}
+.check span{color:var(--muted);font-size:.93rem}
+.check input:checked ~ div b{text-decoration:line-through;opacity:.6}
+.tips{padding-left:18px;margin:0}
+.tips li{margin-bottom:8px}
+footer{margin-top:40px;color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Rome</h1>
+  <p>Friday 6 to Sunday 8 November 2026. Three days on foot, with gelato in between.</p>
+  <span id="countdown" aria-live="polite"></span>
+</header>
+
+<div class="flights">
+  <div class="flight">
+    <div class="route">Lisbon → Rome</div>
+    <div class="when">Thursday, 5 Nov</div>
+    <div class="ftime">20:30 → 00:30 (Rome time)</div>
+  </div>
+  <div class="flight">
+    <div class="route">Rome → Lisbon</div>
+    <div class="when">Sunday, 8 Nov</div>
+    <div class="ftime">19:35 → 21:50 (Lisbon time)</div>
+  </div>
+</div>
+
+<div class="stay">
+  <b>Airbnb:</b> Via Toscana, 00187 Rome<br>
+  <span class="meta">Near Via Veneto and Villa Borghese, inside the city walls.</span>
+</div>
+
+<nav class="tabs" role="tablist" aria-label="Trip days">
+  <button role="tab" aria-selected="true" data-day="0">Day 1<small>Fri 6 Nov</small></button>
+  <button role="tab" aria-selected="false" data-day="1">Day 2<small>Sat 7 Nov</small></button>
+  <button role="tab" aria-selected="false" data-day="2">Day 3<small>Sun 8 Nov</small></button>
+</nav>
+
+<div id="day" role="tabpanel" aria-live="polite"></div>
+
+<section class="block">
+  <h2>Ideas to add</h2>
+  <p>Tick the ones we want.</p>
+  <div id="suggestions"></div>
+</section>
+
+<section class="block">
+  <h2>To book before we go</h2>
+  <p>Tick them off as they are done.</p>
+  <div id="bookings"></div>
+</section>
+
+<section class="block">
+  <h2>Practical info</h2>
+  <ul class="tips">
+    <li><b>Arrival at 00:30.</b> The airport train into Rome is not running at that hour. The simplest option is a taxi on the fixed fare into the city walls, around €55 (to be confirmed), or a private transfer. Agree late check-in with the host.</li>
+    <li><b>Departure on Sunday.</b> Leave the Airbnb by 15:30 at the latest. The Leonardo Express from Termini to Fiumicino takes about 32 minutes.</li>
+    <li><b>Weather.</b> November in Rome is cool and often rainy. Bring an umbrella and layers.</li>
+    <li><b>Vatican and churches.</b> Shoulders and knees covered.</li>
+    <li><b>Water.</b> The street fountains (nasoni) give free drinking water.</li>
+    <li><b>Pickpockets.</b> Keep an eye on bags at the Colosseum, on the metro and at the Trevi Fountain.</li>
+  </ul>
+</section>
+
+<footer>Opening hours and prices should be confirmed on the official sites before going.</footer>
+</div>
+
+<script>
+const MAP1="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Basilica+of+San+Clemente,+Piazza+di+S.+Clemente,+00184+Roma+RM,+Italy/Colosseo,+P.za+del+Colosseo,+00184+Roma+RM,+Italy/Colosseum,+P.za+del+Colosseo,+1,+00184+Roma+RM,+Italy/Circus+Maximus,+00186+Roma+RM,+Italy/Roman+Forum,+00186+Roma+RM,+Italy/Trajan's+Column,+Via+dei+Fori+Imperiali,+00187+Roma+RM,+Italy/Piazza+del+Campidoglio,+00186+Roma+RM,+Italy/Trattoria+Della+Stampa,+Via+dei+Maroniti,+32,+00187+Roma+RM,+Italy/@41.8914962,12.4779169,15.46z/data=!4m56!4m55!1m5!1m1!1s0x132f610712a8de03:0x43688a6bbe0a210b!2m2!1d12.491789!2d41.908261!1m5!1m1!1s0x132f61b84d7e5de9:0x97e138e66d21b151!2m2!1d12.4975757!2d41.8893347!1m5!1m1!1s0x132f61b6c247d27b:0xc2f067c8ffffc983!2m2!1d12.4914684!2d41.8914771!1m5!1m1!1s0x132f61b6532013ad:0x28f1c82e908503c4!2m2!1d12.4922309!2d41.8902102!1m5!1m1!1s0x132f61cadc47c5c5:0x68110dfa2da8d96c!2m2!1d12.4857578!2d41.8858762!1m5!1m1!1s0x132f61b383a9cdef:0xfa914007c0ec7de6!2m2!1d12.4864378!2d41.8920906!1m5!1m1!1s0x132f61b2d423ee1f:0x9dc836ce4ae28be8!2m2!1d12.484299!2d41.895833!1m5!1m1!1s0x132f604ca0596a49:0xb52d0fa1b6a3435!2m2!1d12.4827909!2d41.8931725!1m5!1m1!1s0x132f61acbac49415:0x1535976629c446ad!2m2!1d12.4847673!2d41.9022142!3e2?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D";
+const MAP2="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Gardens+of+Palazzo+Venezia,+Piazza+di+S.+Marco,+49,+00186+Roma+RM,+Italy/Largo+di+Torre+Argentina,+00186+Roma+RM,+Italy/Piazza+Navona,+00186+Roma+RM,+Italy/Osteria+da+Fortunata+-+Rinascimento,+Corso+del+Rinascimento,+17,+00186+Roma+RM,+Italy/Trevi+Fountain,+Piazza+di+Trevi,+00187+Roma+RM,+Italy/La+Colonna+di+Marco+Aurelio,+V.+del+Corso,+00187+Roma+RM,+Italy/Spanish+Steps,+Piazza+di+Spagna,+00187+Roma+RM,+Italy/Mausoleum+of+Augustus,+Piazza+Augusto+Imperatore,+00186+Roma+RM,+Italy/Piazza+del+Popolo,+Roma+RM,+Italy/La+Buca+di+Ripetta,+Via+di+Ripetta,+36,+00186+Roma+RM,+Italy/@41.9034875,12.472344,15z/data=!3m1!4b1!4m68!4m67!1m5!1m1!1s0x132f610712a8de03:0x43688a6bbe0a210b!2m2!1d12.491789!2d41.908261!1m5!1m1!1s0x132f61b232a376ad:0x3888a67f597c4bf0!2m2!1d12.4815269!2d41.8959277!1m5!1m1!1s0x132f604ef369ad3f:0x77f590947214104d!2m2!1d12.4768916!2d41.8960403!1m5!1m1!1s0x132f604ffb562893:0x5c425ce8ce05efb!2m2!1d12.4732921!2d41.8991328!1m5!1m1!1s0x132f614c69ed10df:0xc987d563139a8649!2m2!1d12.4739066!2d41.8976934!1m5!1m1!1s0x132f6053278340d5:0xf676f1e1cc02bbb6!2m2!1d12.483313!2d41.9009325!1m5!1m1!1s0x132f610060342b49:0xa52af45836c9b1d1!2m2!1d12.4799857!2d41.9008869!1m5!1m1!1s0x132f60541678ae75:0x7fc0d4978aae690f!2m2!1d12.482775!2d41.90599!1m5!1m1!1s0x132f6056f1882ae5:0x4916bb1e62c0e72c!2m2!1d12.4764264!2d41.9060311!1m5!1m1!1s0x132f60f8e5fa32d1:0xc87b8749f3592a6a!2m2!1d12.4762093!2d41.9110163!1m5!1m1!1s0x132f6056259de5dd:0xcc64d34962e43ab4!2m2!1d12.4761763!2d41.9083504!3e2?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D";
+const MAP3="https://www.google.com/maps/dir/Via+Toscana,+8,+00187+Roma+RM,+Italy/Villa+Medici,+Viale+della+Trinit%C3%A0+dei+Monti,+1,+00187+Roma+RM,+Italy/Vatican+Museums,+00120+Citt%C3%A0+del+Vaticano,+Vatican+City/Saint+Peter's+Square,+Piazza+San+Pietro,+00120+Citt%C3%A0+del+Vaticano,+Vatican+City/@41.9064285,12.4692251,15.87z/data=!4m26!4m25!1m5!1m1!1s0x132f610712a8de03:0x43688a6bbe0a210b!2m2!1d12.491789!2d41.908261!1m5!1m1!1s0x132f60552d72ab5b:0x1baeac81c2a6c031!2m2!1d12.482623!2d41.9082914!1m5!1m1!1s0x132f6063839bc129:0xcfe0eca0526416b6!2m2!1d12.4536413!2d41.9064878!1m5!1m1!1s0x132f608ac6fc195d:0xefc0d618affc9ec5!2m2!1d12.4568158!2d41.9022359!3e2?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D";
+
+const DAYS=[
+ {title:"Day 1: Ancient Rome",map:MAP1,
+  note:"Friday. Starting point is the Airbnb.",
+  stops:[
+   {t:"10:00",n:"Basilica of San Clemente",tags:[["Entry ticket","buy"]]},
+   {t:"11:00",n:"Colosseum"},
+   {t:"11:30",n:"Colosseum station (entry)",tags:[["Entry ticket","buy"]]},
+   {t:"13:00",n:"Lunch (to be decided)",food:1},
+   {t:"14:30",n:"Roman Forum",tags:[["Entry ticket","buy"]]},
+   {t:"16:00",n:"Circus Maximus"},
+   {t:"16:30",n:"Capitoline Square"},
+   {t:"17:00",n:"Statue of Constantine I"},
+   {t:"18:00",n:"Trajan's Forum"},
+   {t:"18:30",n:"Trajan's Column"},
+   {t:"20:00",n:"Dinner: Trattoria della Stampa",food:1}
+  ]},
+ {title:"Day 2: Historic centre",map:MAP2,
+  note:"Saturday. Starting point is the Airbnb.",
+  stops:[
+   {t:"10:00",n:"Gardens of Palazzo Venezia",tags:[["Free entry",""]]},
+   {t:"10:45",n:"Largo di Torre Argentina"},
+   {t:"11:30",n:"Piazza Navona"},
+   {t:"12:30",n:"Lunch: Osteria da Fortunata",food:1},
+   {t:"14:00",n:"Pantheon"},
+   {t:"15:00",n:"Trevi Fountain and Column of Marcus Aurelius"},
+   {t:"16:00",n:"Gelato 1: Venchi",food:1},
+   {t:"16:45",n:"Spanish Steps"},
+   {t:"17:45",n:"Mausoleum of Augustus (from outside)"},
+   {t:"18:30",n:"Piazza del Popolo"},
+   {t:"20:00",n:"Dinner: La Buca di Ripetta",food:1}
+  ]},
+ {title:"Day 3: Villa Medici and the Vatican",map:MAP3,
+  note:"Sunday. Starting point is the Airbnb.",
+  stops:[
+   {t:"11:00",n:"Villa Medici"},
+   {t:"12:30",n:"Lunch and gelato 2: Giolitti",food:1},
+   {t:"14:00",n:"Vatican Museums",tags:[["Entry ticket","buy"]]},
+   {t:"16:00",n:"St Peter's Square"}
+  ]}
+];
+
+const SUGG=[
+ ["Palatine Hill","Included in the Colosseum and Forum ticket, between the two. Good views over the Circus Maximus."],
+ ["Pincio terrace at sunset","Right by the Airbnb, above Piazza del Popolo. Sunset is around 16:55."],
+ ["Dinner in Trastevere","Narrow streets across the Tiber. A good option for a free evening."],
+ ["Castel Sant'Angelo","On the way between the centre and the Vatican."],
+ ["Aventine keyhole and Orange Garden","Free, near the Circus Maximus. The keyhole frames the dome of St Peter's."],
+ ["Galleria Borghese","Right next to the Airbnb. Entry by reservation only."],
+ ["Lunch on Day 1 and Day 3","Pick two places."]
+];
+const BOOK=[
+ ["Colosseum, Forum and Palatine","One combined timed ticket."],
+ ["Vatican Museums","Choose day and time slot."],
+ ["Pantheon","Online ticket."],
+ ["Villa Medici","Check visit times."],
+ ["Airport transfer at 00:30","Fixed-fare taxi or private transfer. Agree arrival with the host."]
+];
+
+function mk(list,el){
+  document.getElementById(el).innerHTML=list.map(x=>`<label class="check"><input type="checkbox"><div><b>${x[0]}</b><span>${x[1]}</span></div></label>`).join("");
+}
+mk(SUGG,"suggestions");mk(BOOK,"bookings");
+
+function render(i){
+  const d=DAYS[i];
+  const stops=d.stops.map(s=>{
+    const tags=(s.tags||[]).map(t=>`<span class="tag ${t[1]}">${t[0]}</span>`).join("");
+    return `<li class="stop${s.food?" food":""}"><div class="time">${s.t}</div><div class="card"><div class="name">${s.n}</div>${tags}</div></li>`;
+  }).join("");
+  document.getElementById("day").innerHTML=`<div class="dayhead"><h2>${d.title}</h2><a class="mapbtn" href="${d.map}" target="_blank" rel="noopener">Open route in Google Maps</a></div><p class="daynote">${d.note}</p><ol class="timeline">${stops}</ol>`;
+  document.querySelectorAll(".tabs button").forEach((b,j)=>b.setAttribute("aria-selected",j===i));
+}
+document.querySelectorAll(".tabs button").forEach(b=>b.addEventListener("click",()=>render(+b.dataset.day)));
+render(0);
+
+function tick(){
+  const el=document.getElementById("countdown");
+  const diff=Date.UTC(2026,10,5,20,30)-Date.now();
+  if(diff>0){
+    const h=Math.floor(diff/36e5),m=Math.floor(diff%36e5/6e4);
+    el.textContent=h>=24?`${Math.floor(h/24)} days ${h%24}h until takeoff`:`${h}h ${m}min until takeoff`;
+  } else {el.textContent="Have a great trip";}
+}
+tick();setInterval(tick,60000);
+</script>
+</body>
+</html>
